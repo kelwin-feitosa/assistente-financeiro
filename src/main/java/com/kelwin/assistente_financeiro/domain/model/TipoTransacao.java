@@ -1,5 +1,6 @@
 package com.kelwin.assistente_financeiro.domain.model;
 
-public class TipoTransacao {
-
+public enum TipoTransacao {
+    RECEITA,
+    DESPESA
 }
