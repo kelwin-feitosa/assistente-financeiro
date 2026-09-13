@@ -51,9 +51,11 @@ A integração com Inteligência Artificial é tratada como uma camada de infrae
 - Spring Boot
 - Spring AI
 - Spring Data JPA
+- Jakarta Bean Validation
 - MySQL
 - Maven
 - Docker
+- Swagger / OpenAPI
 - Groq
 - Git e GitHub
 
@@ -69,13 +71,37 @@ openai/gpt-oss-120b
 
 A chave de API é configurada por meio da variável de ambiente `GROQ_API_KEY` e não é armazenada no repositório.
 
+## 📊 Funcionalidades implementadas
+
+Atualmente, a aplicação possui:
+
+- Cadastro de transações financeiras;
+- Listagem de transações;
+- Consulta de transação por identificador;
+- Exclusão de transações;
+- Persistência utilizando Spring Data JPA;
+- Validação dos dados de entrada;
+- Tratamento global de exceções;
+- Documentação da API utilizando Swagger/OpenAPI.
+
+## 🚧 Próximas etapas
+
+As próximas etapas do projeto envolvem:
+
+- Integração completa do assistente com o modelo de linguagem;
+- Implementação de **Tool Calling**;
+- Interpretação de solicitações financeiras em linguagem natural;
+- Integração de **Speech-to-Text**;
+- Integração de **Text-to-Speech**;
+- Evolução dos testes e demais funcionalidades da aplicação.
+
 ## 📌 Status
 
 **Em desenvolvimento.**
 
-Neste momento, o projeto possui a estrutura inicial da aplicação e a integração básica com o modelo de linguagem já foi validada.
+A estrutura principal da aplicação e o fluxo básico de gerenciamento de transações financeiras já estão implementados. A integração com o modelo de linguagem utilizando Spring AI e Groq também já foi validada.
 
-As próximas etapas envolvem a implementação das transações financeiras, persistência, ferramentas de Tool Calling e posteriormente o fluxo de interação por áudio.
+O projeto está sendo desenvolvido incrementalmente, com a implementação das funcionalidades de IA como próxima etapa.
 
 ## 📚 Referência
 
