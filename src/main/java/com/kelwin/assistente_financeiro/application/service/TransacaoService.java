@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.kelwin.assistente_financeiro.domain.model.TipoTransacao;
 import com.kelwin.assistente_financeiro.domain.model.Transacao;
 import com.kelwin.assistente_financeiro.domain.repository.TransacaoRepository;
 import com.kelwin.assistente_financeiro.presentation.dto.TransacaoRequest;
@@ -24,6 +25,13 @@ public class TransacaoService {
 
     public List<TransacaoResponse> listarTransacoes() {
         return repository.findAll()
+                .stream()
+                .map(this::toResponse)
+                .toList();
+    }
+
+    public List<TransacaoResponse> listarTransacoesPorTipo(TipoTransacao tipo) {
+        return repository.findAllByTipo(tipo)
                 .stream()
                 .map(this::toResponse)
                 .toList();
