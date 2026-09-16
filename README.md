@@ -45,6 +45,8 @@ src/main/java/com/kelwin/assistente_financeiro/
 
 A integração com Inteligência Artificial é tratada como uma camada de infraestrutura, enquanto as operações da aplicação são centralizadas nos serviços da aplicação.
 
+As ferramentas utilizadas pelo modelo de linguagem funcionam como uma ponte entre a IA e as funcionalidades da aplicação, reutilizando os serviços existentes.
+
 ## 🛠️ Tecnologias
 
 - Java 21
@@ -56,20 +58,31 @@ A integração com Inteligência Artificial é tratada como uma camada de infrae
 - Maven
 - Docker
 - Swagger / OpenAPI
-- Groq
+- Google Gemini
 - Git e GitHub
 
 ## 🤖 Inteligência Artificial
 
-A integração com o modelo de linguagem é realizada utilizando o **Spring AI**, com a API compatível com OpenAI disponibilizada pela **Groq**.
+A integração com o modelo de linguagem é realizada utilizando o **Spring AI** e a API do **Google Gemini**.
 
 O modelo utilizado atualmente é:
 
 ```text
-openai/gpt-oss-120b
+gemini-3.6-flash
 ```
 
-A chave de API é configurada por meio da variável de ambiente `GROQ_API_KEY` e não é armazenada no repositório.
+A chave de API é configurada por meio da variável de ambiente `GEMINI_API_KEY` e não é armazenada no repositório.
+
+### Tool Calling
+
+O assistente utiliza **Tool Calling** para permitir que o modelo de linguagem execute operações específicas da aplicação.
+
+Atualmente, estão disponíveis ferramentas para:
+
+- Criar transações financeiras;
+- Consultar transações por tipo (`RECEITA` ou `DESPESA`).
+
+As ferramentas recebem parâmetros estruturados e delegam as operações aos serviços da aplicação.
 
 ## 📊 Funcionalidades implementadas
 
@@ -82,26 +95,32 @@ Atualmente, a aplicação possui:
 - Persistência utilizando Spring Data JPA;
 - Validação dos dados de entrada;
 - Tratamento global de exceções;
-- Documentação da API utilizando Swagger/OpenAPI.
+- Documentação da API utilizando Swagger/OpenAPI;
+- Integração com Google Gemini através do Spring AI;
+- Interpretação de solicitações financeiras em linguagem natural;
+- **Tool Calling** para criação de transações;
+- **Tool Calling** para consulta de transações por tipo.
 
 ## 🚧 Próximas etapas
 
 As próximas etapas do projeto envolvem:
 
-- Integração completa do assistente com o modelo de linguagem;
-- Implementação de **Tool Calling**;
-- Interpretação de solicitações financeiras em linguagem natural;
+- Evolução das ferramentas disponíveis para o assistente;
 - Integração de **Speech-to-Text**;
 - Integração de **Text-to-Speech**;
-- Evolução dos testes e demais funcionalidades da aplicação.
+- Evolução dos testes;
+- Aprimoramento da interpretação de solicitações em linguagem natural;
+- Evolução das demais funcionalidades da aplicação.
 
 ## 📌 Status
 
 **Em desenvolvimento.**
 
-A estrutura principal da aplicação e o fluxo básico de gerenciamento de transações financeiras já estão implementados. A integração com o modelo de linguagem utilizando Spring AI e Groq também já foi validada.
+A estrutura principal da aplicação e o fluxo básico de gerenciamento de transações financeiras já estão implementados.
 
-O projeto está sendo desenvolvido incrementalmente, com a implementação das funcionalidades de IA como próxima etapa.
+A integração com o **Spring AI e Google Gemini** já está funcionando, incluindo **Tool Calling** para criação e consulta de transações financeiras.
+
+O projeto está sendo desenvolvido incrementalmente, com a evolução das funcionalidades de IA e posteriormente a integração de recursos de voz.
 
 ## 📚 Referência
 
