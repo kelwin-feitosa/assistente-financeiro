@@ -41,7 +41,6 @@ public record TransacaoRequest(
         description = "Data e hora da transação",
         example = "2026-09-13T15:30:00"
     )
-    @NotNull(message = "A data da transação é obrigatória")
     LocalDateTime data
 
 ) {}

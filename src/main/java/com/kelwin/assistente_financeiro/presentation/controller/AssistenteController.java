@@ -25,12 +25,20 @@ public class AssistenteController {
 
     @Operation(
         summary = "Enviar mensagem para o assistente",
-        description = "Envia uma mensagem em linguagem natural para o assistente financeiro e retorna a resposta da IA."
+        description = "Envia uma mensagem em linguagem natural para o assistente financeiro. "
+                    + "A IA pode utilizar as ferramentas disponíveis para consultar informações financeiras."
     )
     @ApiResponses({
         @ApiResponse(
             responseCode = "200",
-            description = "Resposta gerada com sucesso"
+            description = "Resposta gerada com sucesso",
+            content = @Content(
+                mediaType = "text/plain",
+                schema = @Schema(
+                    type = "string",
+                    example = "Você possui uma transação de R$ 35,90 referente a Almoço."
+                )
+            )
         ),
         @ApiResponse(
             responseCode = "500",
@@ -41,13 +49,13 @@ public class AssistenteController {
     public String respostaIA(
             @RequestBody
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
-                description = "Mensagem enviada para o assistente",
+                description = "Mensagem em linguagem natural enviada ao assistente.",
                 required = true,
                 content = @Content(
                     mediaType = "text/plain",
                     schema = @Schema(
                         type = "string",
-                        example = "Olá! O que você pode fazer?"
+                        example = "Quais são minhas transações?"
                     )
                 )
             )
