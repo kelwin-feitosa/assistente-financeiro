@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("!test")
 @Service
 public class WhisperService {
 
