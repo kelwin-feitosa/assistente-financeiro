@@ -23,7 +23,7 @@ Entre as funcionalidades implementadas estão:
 
 O projeto utiliza uma **arquitetura em camadas**, separando responsabilidades entre apresentação, aplicação, domínio e infraestrutura.
 
-```
+```text
 src/main/java/com/kelwin/assistente_financeiro/
 
 ├── domain/
@@ -143,7 +143,7 @@ PIPER_MODEL_PATH
 
 ## 📊 Funcionalidades implementadas
 
-Atualmente, a aplicação possui:
+A aplicação possui:
 
 - Cadastro de transações financeiras;
 - Listagem de transações;
@@ -207,13 +207,14 @@ As configurações devem ser fornecidas por variáveis de ambiente:
 ```text
 WHISPER_CLI_PATH=/caminho/para/whisper-cli
 WHISPER_MODEL_PATH=/caminho/para/modelo-do-whisper
+
 PIPER_CLI_PATH=/caminho/para/piper
 PIPER_MODEL_PATH=/caminho/para/modelo-do-piper
 ```
 
 Esses arquivos e caminhos não são versionados no Git.
 
-## ⚠️ Limitações conhecidas
+## 🔎 Limitações conhecidas
 
 Expressões temporais em linguagem natural, como `"ontem"` ou `"semana passada"`, ainda não são convertidas automaticamente para `LocalDateTime`.
 
@@ -221,17 +222,19 @@ Quando nenhuma data é informada, o sistema utiliza automaticamente a data e hor
 
 ## 📌 Status
 
-**Em desenvolvimento.**
+**Concluído.**
 
-A estrutura principal da aplicação, o gerenciamento de transações e a integração com Inteligência Artificial já estão implementados.
+O projeto foi desenvolvido como projeto de conclusão do **Bootcamp Itaú - Java com Inteligência Artificial**, da Digital Innovation One (DIO).
 
-Atualmente, o projeto possui integração funcional com **Spring AI e Google Gemini**, incluindo **Tool Calling** para criação e consulta de transações financeiras.
+A estrutura principal da aplicação, o gerenciamento de transações e a integração com Inteligência Artificial foram implementados.
 
-O fluxo de voz também está implementado, utilizando **Whisper.cpp** para Speech-to-Text e **Piper** para Text-to-Speech.
+A aplicação possui integração funcional com **Spring AI e Google Gemini**, incluindo **Tool Calling** para criação e consulta de transações financeiras.
+
+O fluxo de voz também foi implementado, utilizando **Whisper.cpp** para Speech-to-Text e **Piper** para Text-to-Speech.
 
 Além disso, o projeto possui testes automatizados e pipeline de **CI com GitHub Actions e MySQL**.
 
-As próximas evoluções estarão concentradas no aprimoramento da interpretação das solicitações, expansão das ferramentas disponíveis e evolução das funcionalidades da aplicação.
+As limitações descritas neste README representam funcionalidades que não fazem parte do escopo atual do projeto e que podem ser consideradas em futuras evoluções.
 
 ## 📚 Referência
 
